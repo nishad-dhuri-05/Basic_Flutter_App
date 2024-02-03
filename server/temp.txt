@@ -1,0 +1,95 @@
+{ email: 'nhdhuri24@gmail.com', name: 'nishad' }
+
+register request:
+{
+    "user":{
+        "email":"nhdhuri24@gmail.com",
+        "name":"nishad"
+    }
+}
+
+{
+    "email":"nhdhuri24@gmail.com",
+    "name":"nishad",
+    "contact":"9969801629",
+    "address":"ropar"
+}
+register response:
+{
+    "success": true,
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDA3ODksImV4cCI6MTcwNTQwMTA4OX0.CmogN5dv-ek3KLp9hnQqTIV3p5fOYX3c-3ay78FAlsc",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDA3ODksImV4cCI6MTcyMDk1Mjc4OX0.CJ24N77Z60-0nzsmDU5gdgs_UeS2mQSIxWx9ono4HF8",
+    "message": "User added successfully"
+}
+
+first we send an otp to some email address using /otp route
+Then we go to another page where we take the email and otp as input
+
+otp request:
+{
+    "email":"nhdhuri24@gmail.com"
+}
+
+otp response:
+{
+    "message": "OTP sent successfully"
+}
+
+{
+    "userExists":true,
+    "message": "OTP sent successfully"
+}
+login request:
+{
+    "credentials":{
+        "email":"nhdhuri24@gmail.com",
+        "otp":"483041"
+    }
+}
+
+{
+    "email":"nhdhuri24@gmail.com",
+    "otp":"483041"
+}
+login response:
+{
+    "success": true,
+    "user": {
+        "_id": "65a659d5d41ff3b9737c6533",
+        "email": "nhdhuri24@gmail.com",
+        "name": "nishad",
+        "__v": 0
+    },
+    "message": "User logged in successfully",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDE1NTYsImV4cCI6MTcwNTQwMTg1Nn0.pj6Ijz-_bB5aewJKxxRfs9TfhctZGJAnng8BKOm7X7k",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDE1NTYsImV4cCI6MTcyMDk1MzU1Nn0.tQSSGJJJFFMzS_7SfScCYHjzG3n9w-zMtOoj0T8HS38"
+}
+
+profile request:
+{
+   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDI5NTksImV4cCI6MTcwNTQwMzI1OX0.hLi8xeIPZC0mVDr5mOfklmhDUWPeX8PERhZdGDXD0II",
+   "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDI5NTksImV4cCI6MTcyMDk1NDk1OX0._6STm-t2aw70NsCULi4laA_frouTQ6f1dkJEiU9z6Bc"
+}
+
+profile response:
+{
+    "message": "Profile accessed",
+    "authData": {
+        "email": "nhdhuri24@gmail.com",
+        "iat": 1705402959,
+        "exp": 1705403259
+    }
+}
+
+profile_update request:
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDI5NTksImV4cCI6MTcwNTQwMzI1OX0.hLi8xeIPZC0mVDr5mOfklmhDUWPeX8PERhZdGDXD0II",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5oZGh1cmkyNEBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MDI5NTksImV4cCI6MTcyMDk1NDk1OX0._6STm-t2aw70NsCULi4laA_frouTQ6f1dkJEiU9z6Bc",
+    "name":"N1sh@d",
+    "address":"Ropar"
+}
+profile_update response:
+{
+    "success":true,
+    "message":"User created successfully"
+}
